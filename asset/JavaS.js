@@ -5,31 +5,35 @@ const tombola = document.getElementById("tombola");
 const button = document.getElementById("button");
 const numText = document.querySelector("div h3");
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 90; i++) {
   //   crazione tomb
   const elementombola = document.createElement("div");
-  elementombola.classList = "NumTombola";
+  elementombola.classList.add("NumTombola");
 
   const numeroT = document.createElement("h2");
-  let testoN = (numeroT.innerText = i + 1);
+  numeroT.innerText = i + 1;
 
-  tombola.appendChild(elementombola);
   elementombola.appendChild(numeroT);
+  tombola.appendChild(elementombola);
 }
 
-button.onclick = () => acaso();
+button.onclick = getrandom;
 
-function acaso() {
-  const num = Math.floor(Math.random() * 101);
-  numText.innerText = num;
+function getrandom() {
+  const notSelected = document.querySelectorAll("div[class='NumTombola']");
+  console.log(notSelected.length);
 
-  let celle = document.querySelectorAll(".NumTombola");
+  if (notSelected.length > 0) {
+    const num = Math.ceil(Math.random() * 90);
+    numText.innerText = num;
 
-  celle.forEach(function (cella) {
-    let numeroH2 = cella.querySelector("h2").textContent;
+    const celleh2 = document.querySelectorAll(".NumTombola h2");
 
-    if (numeroH2 === num) {
-      cella.classList.add("select");
-    }
-  });
+    const selectedElement = celleh2[num - 1];
+    selectedElement.parentNode.classList.add("Select");
+
+    console.log(celleh2[num - 1]);
+  } else {
+    alert("gioco finito");
+  }
 }
