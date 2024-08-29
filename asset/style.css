@@ -1,0 +1,38 @@
+#tavoloTomb {
+  margin-top: 25px;
+  margin-inline: auto;
+  width: 750px;
+  padding: 20px;
+  background-color: bisque;
+}
+
+.NumTombola {
+  display: inline-block;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 15px;
+  margin: 7px;
+}
+
+.Select {
+  background-color: aquamarine;
+}
+
+.NumTombola h2 {
+  text-align: center;
+  width: 27px;
+  height: 27px;
+  margin: 15px;
+}
+
+#RandomButton {
+  text-align: center;
+}
+
+#button {
+  padding: 10px;
+}
+
+h3 {
+  display: inline-block;
+}
